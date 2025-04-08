@@ -1,4 +1,4 @@
-import useStyles from './App';
+import useStyles from './AppStyle';
 import './App.css';
 import Filters from './components/fiters/Filters';
 import Navbar from './components/navbar/Navbar';

@@ -2,37 +2,36 @@ import { createUseStyles } from 'react-jss';
 const styleSearchBar = {
   searchBody: {
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'start',
     alignItems: 'center',
     flexDirection: 'column',
     width: '100%',
     backgroundColor: 'black',
     marginTop: '40px',
+    paddingTop: '10px',
   },
 
   searchBarHeightContainer: {
     display: 'flex',
-    position: 'sticky',
-    width: '60%',
-    top: '0',
-    right: '0',
+
+    width: '90%',
+
     flexDirection: 'column',
     justifyContent: 'start',
     alignItems: 'start',
     overflowY: 'auto',
-    minWidth:"436px"
+    minWidth: '436px',
   },
 
   searchBarContainer: {
+    display: 'flex',
+    justifyContent: 'start',
+    alignItems: 'start',
     position: 'relative',
     width: '100%',
     height: '60px',
     backgroundColor: '#37383E',
     borderRadius: '5px',
-    marginBottom: '25px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
 
   searchBar: {
@@ -81,25 +80,27 @@ const styleSearchBar = {
   },
 
   grid: {
-    display: 'flex',
-    justifyContent: 'start',
-    alignItems: 'center',
-    gap: '16px',
-    flexWrap: 'wrap',
-    maxHeight: '500px',
-    width: '100%',
-    '@media(max-width:1280px)': {
-      gap: '16px',
-      width: '95%',
-    },
-    '@media(max-width:980px)': {
-      gap: '10px',
-      width: '95%',
-    },
-    '@media(max-width:900px)': {
-      gap: '10px',
-      width: '100%',
-    },
+    // display: 'flex',
+    // justifyContent: 'start',
+    // alignItems: 'center',
+    // flexDirection:"row",
+    // gap: '16px',
+    // flexWrap: 'wrap',
+    // maxHeight: '500px',
+    // width: '100%',
+    // marginTop:"20px",
+    // '@media(max-width:1280px)': {
+    //   gap: '16px',
+    //   width: '95%',
+    // },
+    // '@media(max-width:980px)': {
+    //   gap: '10px',
+    //   width: '95%',
+    // },
+    // '@media(max-width:900px)': {
+    //   gap: '10px',
+    //   width: '100%',
+    // },
   },
 };
 export default createUseStyles(styleSearchBar);
