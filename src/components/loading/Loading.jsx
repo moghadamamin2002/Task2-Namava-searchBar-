@@ -1,6 +1,6 @@
 import React from 'react';
-import useStyles from './CardStyle';
-import LoadingIMG from "../../assets/img/ATT00002.htm"
+import useStyles from './LoadingStyle';
+import LoadingIMG from "../../assets/img/Joker.png"
 
 const Loading = () => {
   const classStyle = useStyles();

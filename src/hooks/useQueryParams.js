@@ -1,10 +1,15 @@
 import { useSearchParams } from 'react-router-dom';
+import { useMemo } from 'react';
 
 const useQueryParams = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const query = searchParams.get('query') || '';
-  const type = searchParams.get('type')?.split(',') || [];
+
+  
+  const type = useMemo(() => {
+    return searchParams.get('type')?.split(',') || [];
+  }, [searchParams]);
 
   const updateQuery = (value) => {
     const newParams = new URLSearchParams(searchParams);

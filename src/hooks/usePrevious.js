@@ -3,7 +3,14 @@ import useStyles from './GridStyle';
 import Card from '../card/Card';
 import useMovies from '../../hooks/useMovie';
 import useQueryParams from '../../hooks/useQueryParams';
-import Loading from "../loading/Loading"
+
+const usePrevious = (value) => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  }, [value]);
+  return ref.current;
+};
 
 const Grid = () => {
   const classStyle = useStyles();
@@ -11,6 +18,9 @@ const Grid = () => {
   const joinedType = type.length > 0 ? type.join(',') : 'all';
 
   const [page, setPage] = useState(1);
+
+  const prevQuery = usePrevious(query);
+  const prevType = usePrevious(joinedType);
 
   const { movies, total, loading, hasMore } = useMovies(
     query,
@@ -20,10 +30,10 @@ const Grid = () => {
 
 
   useEffect(() => {
-    setPage(1);
-  }, [query, type]);
-
-
+    if (query !== prevQuery || joinedType !== prevType) {
+      setPage(1);
+    }
+  }, [query, joinedType, prevQuery, prevType]);
 
   const observerRef = useRef();
 
@@ -35,11 +45,9 @@ const Grid = () => {
 
       observerRef.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
-          setPage((page) => {
-            return page + 1;
-          });
+          setPage((prevPage) => prevPage + 1);
         }
-      },{ threshold:0.5});
+      });
 
       if (node) observerRef.current.observe(node);
     },
@@ -52,10 +60,7 @@ const Grid = () => {
         <Card key={movie.id} NAME={movie.name} IMAGE={movie.image_url} />
       ))}
 
-      <div className='loading' ref={lastItemRef}>
-        { loading && <Loading/>}
-      </div>
-      
+      <div ref={lastItemRef} style={{ height: '1px' }} />
     </div>
   );
 };
