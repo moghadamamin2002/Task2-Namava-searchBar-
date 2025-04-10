@@ -4,7 +4,7 @@ const GridStyle = {
   grid: {
     display: 'flex',
     justifyContent: 'start',
-    alignItems: 'center',
+    alignItems: 'start',
     flexDirection: 'row',
     gap: '16px',
     flexWrap: 'wrap',

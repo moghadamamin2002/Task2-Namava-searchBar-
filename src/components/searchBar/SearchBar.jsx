@@ -11,8 +11,8 @@ const SearchBar = () => {
   const { query, updateQuery } = useQueryParams();
   const { ref, clearInput: clearInputHook } = useClearableInput();
 
-  const handleInputChange = (e) => {
-    updateQuery(e.target.value);
+  const handleInputChange = (event) => {
+    updateQuery(event.target.value);
   };
 
   const clearInput = () => {

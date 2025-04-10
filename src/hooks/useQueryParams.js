@@ -6,9 +6,10 @@ const useQueryParams = () => {
 
   const query = searchParams.get('query') || '';
 
-  
   const type = useMemo(() => {
-    return searchParams.get('type')?.split(',') || [];
+    const rawType = searchParams.get('type');
+    if (rawType === 'all') return ['movie', 'series'];
+    return rawType?.split(',') || [];
   }, [searchParams]);
 
   const updateQuery = (value) => {
@@ -20,11 +21,15 @@ const useQueryParams = () => {
 
   const updateType = (checkboxValue, checked) => {
     const current = new Set(type);
+
     if (checked) current.add(checkboxValue);
     else current.delete(checkboxValue);
 
     const newParams = new URLSearchParams(searchParams);
-    if (current.size > 0) {
+
+    if (current.has('movie') && current.has('series')) {
+      newParams.set('type', 'all');
+    } else if (current.size > 0) {
       newParams.set('type', [...current].join(','));
     } else {
       newParams.delete('type');

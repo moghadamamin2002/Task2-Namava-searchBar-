@@ -3,7 +3,9 @@ import useStyles from './GridStyle';
 import Card from '../card/Card';
 import useMovies from '../../hooks/useMovie';
 import useQueryParams from '../../hooks/useQueryParams';
-import Loading from "../loading/Loading"
+import Loading from '../loading/Loading';
+import EmptySearchPrompt from './../emptySearchPrompt/EmptySearchPrompt';
+import NoResultsFound from './../noResultsFound/NoResultsFound';
 
 const Grid = () => {
   const classStyle = useStyles();
@@ -18,12 +20,9 @@ const Grid = () => {
     page
   );
 
-
   useEffect(() => {
     setPage(1);
   }, [query, type]);
-
-
 
   const observerRef = useRef();
 
@@ -33,18 +32,27 @@ const Grid = () => {
 
       if (observerRef.current) observerRef.current.disconnect();
 
-      observerRef.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && hasMore) {
-          setPage((page) => {
-            return page + 1;
-          });
-        }
-      },{ threshold:0.5});
+      observerRef.current = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting && hasMore) {
+            setPage((page) => page + 1);
+          }
+        },
+        { threshold: 0.5 }
+      );
 
       if (node) observerRef.current.observe(node);
     },
     [loading, hasMore]
   );
+
+  if (!query) {
+    return <EmptySearchPrompt />;
+  }
+
+  if (query && total === 0) {
+    return <NoResultsFound />;
+  }
 
   return (
     <div className={classStyle.grid}>
@@ -52,10 +60,9 @@ const Grid = () => {
         <Card key={movie.id} NAME={movie.name} IMAGE={movie.image_url} />
       ))}
 
-      <div className='loading' ref={lastItemRef}>
-        { loading && <Loading/>}
+      <div className="loading" ref={lastItemRef}>
+        {loading && <Loading />}
       </div>
-      
     </div>
   );
 };

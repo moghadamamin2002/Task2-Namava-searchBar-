@@ -13,14 +13,17 @@ const styleSearchBar = {
 
   searchBarHeightContainer: {
     display: 'flex',
-
     width: '90%',
-
     flexDirection: 'column',
     justifyContent: 'start',
-    alignItems: 'start',
+    alignItems: 'center',
     overflowY: 'auto',
     minWidth: '436px',
+
+    
+    '&::-webkit-scrollbar': {
+      display: 'none', 
+    },
   },
 
   searchBarContainer: {
