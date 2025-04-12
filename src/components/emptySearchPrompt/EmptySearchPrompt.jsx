@@ -1,6 +1,6 @@
 import React from 'react';
 import doSearch from './../../assets/img/do-search.png';
-import useStyles from './styles';
+import useStyles from './EmptySearchPromptStyle';
 
 const DoSearch = () => {
   const classStyle = useStyles();

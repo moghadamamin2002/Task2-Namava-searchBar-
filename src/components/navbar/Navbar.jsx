@@ -1,11 +1,8 @@
-import useStyles from './styles';
+import useStyles from './NavbarStyle';
 import LOGO from './../../assets/img/namava-logo.png';
 import MAIL from './../../assets/img/namava-mail-icon.png';
 import PROFILE from './../../assets/img/namava-profile.png';
 import SEARCH from './../../assets/img/search1.png';
-import SearchIcons from '../icons/SearchIcons';
-import MailIcon from '../icons/MailIcon';
-import NamavaIcon from '../icons/NamavaIcon';
 const Navbar = () => {
   const styleClass = useStyles();
 
@@ -15,7 +12,7 @@ const Navbar = () => {
         <div className={styleClass.navbarContainer}>
           <div className={styleClass.navbarList}>
             <div className="items">
-              <NamavaIcon/>
+              <img className={styleClass.logo} src={LOGO} alt="نماوا" />
             </div>
             <div className={styleClass.items}>خانه</div>
             <div className={styleClass.items}>فیلم ها</div>
@@ -28,10 +25,18 @@ const Navbar = () => {
           </div>
           <div className={styleClass.icons}>
             <div className="navbar-icons">
-              <SearchIcons className={styleClass.navbarIcons} />
+              <img
+                className={styleClass.navbarIcons}
+                src={SEARCH}
+                alt="جست و جو"
+              />
             </div>
             <div className="navbar-icons">
-              <MailIcon/>
+              <img
+                className={styleClass.navbarIcons}
+                src={MAIL}
+                alt="نامه ها"
+              />
             </div>
             <div className="navbar-icons">
               <img

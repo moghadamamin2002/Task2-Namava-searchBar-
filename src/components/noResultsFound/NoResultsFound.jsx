@@ -1,6 +1,6 @@
 import React from 'react';
 import noSearch from './../../assets/img/no-search.png';
-import useStyles from "./styles"
+import useStyles from "./NoResultsFoundStyle"
 
 
 const NoSearch = () => {

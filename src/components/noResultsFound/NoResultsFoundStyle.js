@@ -1,0 +1,22 @@
+import { createUseStyles } from 'react-jss';
+
+const searchStyle = {
+  NoSearch: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '140px',
+    height: '180px',
+    marginTop: '150px',
+  },
+
+  container: {
+    width: '100%',
+    marginTop: '60px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+};
+
+export default createUseStyles(searchStyle);

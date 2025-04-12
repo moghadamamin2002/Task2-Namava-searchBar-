@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import useStyles from './styles';
-import Card from '../Card';
+import useStyles from './GridStyle';
+import Card from '../card/Card';
 import useMovies from '../../hooks/useMovie';
 import useQueryParams from '../../hooks/useQueryParams';
 import Loading from '../loading/Loading';
@@ -10,7 +10,6 @@ import NoResultsFound from './../noResultsFound/NoResultsFound';
 const Grid = () => {
   const classStyle = useStyles();
   const { query, type } = useQueryParams();
-  // change
   const joinedType = type.length > 0 ? type.join(',') : 'all';
 
   const [page, setPage] = useState(1);
@@ -58,7 +57,7 @@ const Grid = () => {
   return (
     <div className={classStyle.grid}>
       {movies.map((movie) => (
-        <Card key={movie.id} name={movie.name} image={movie.image_url} />
+        <Card key={movie.id} NAME={movie.name} IMAGE={movie.image_url} />
       ))}
 
       <div className="loading" ref={lastItemRef}>
