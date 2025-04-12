@@ -8,6 +8,8 @@ const searchStyle = {
     width: '140px',
     height: '180px',
     marginTop: '150px',
+
+    '@media(max-width:1280px)': {},
   },
 
   container: {

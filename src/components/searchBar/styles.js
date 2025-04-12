@@ -20,8 +20,9 @@ const styleSearchBar = {
     overflowY: 'auto',
     minWidth: '436px',
 
+    
     '&::-webkit-scrollbar': {
-      display: 'none',
+      display: 'none', 
     },
   },
 
@@ -79,6 +80,30 @@ const styleSearchBar = {
     height: '24px',
     cursor: 'pointer',
     zIndex: 1000,
+  },
+
+  grid: {
+    // display: 'flex',
+    // justifyContent: 'start',
+    // alignItems: 'center',
+    // flexDirection:"row",
+    // gap: '16px',
+    // flexWrap: 'wrap',
+    // maxHeight: '500px',
+    // width: '100%',
+    // marginTop:"20px",
+    // '@media(max-width:1280px)': {
+    //   gap: '16px',
+    //   width: '95%',
+    // },
+    // '@media(max-width:980px)': {
+    //   gap: '10px',
+    //   width: '95%',
+    // },
+    // '@media(max-width:900px)': {
+    //   gap: '10px',
+    //   width: '100%',
+    // },
   },
 };
 export default createUseStyles(styleSearchBar);
