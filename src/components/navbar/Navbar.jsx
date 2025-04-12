@@ -1,4 +1,4 @@
-import useStyles from './NavbarStyle';
+import useStyles from './styles';
 import LOGO from './../../assets/img/namava-logo.png';
 import MAIL from './../../assets/img/namava-mail-icon.png';
 import PROFILE from './../../assets/img/namava-profile.png';

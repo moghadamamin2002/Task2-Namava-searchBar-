@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import useStyles from './GridStyle';
+import useStyles from './styles';
 import Card from '../card/Card';
 import useMovies from '../../hooks/useMovie';
 import useQueryParams from '../../hooks/useQueryParams';

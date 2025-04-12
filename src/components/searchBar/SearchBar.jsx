@@ -1,5 +1,5 @@
 import React from 'react';
-import useStyles from './searchBarStyle';
+import useStyles from './styles';
 import SEARCH from './../../assets/img/Search (1).svg';
 import CANCELICON from './../../assets/img/cancel.png';
 import Grid from '../grid/Grid';

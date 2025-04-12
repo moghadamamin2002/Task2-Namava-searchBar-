@@ -1,5 +1,5 @@
 import React from 'react';
-import useStyles from './FiltersStyle';
+import useStyles from './styles';
 import useQueryParams from '../../hooks/useQueryParams';
 
 const Filters = () => {
