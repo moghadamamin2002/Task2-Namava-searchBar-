@@ -26,7 +26,7 @@ const useMovies = (query, type, page) => {
             response?.data?.result?.result_items[0]?.groups?.Media?.total || 0;
 
           if (results && results.length > 0) {
-            setMovies((prev) => (page === 1 ? results : [...prev, ...results]));
+            setMovies((prev) => [...prev, ...results]);
             setTotal(totalItems);
             setHasMore((page - 1) * 20 + results.length < totalItems);
           } else if (page === 1) {

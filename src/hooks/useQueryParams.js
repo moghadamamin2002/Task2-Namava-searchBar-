@@ -12,13 +12,14 @@ const useQueryParams = () => {
     return rawType?.split(',') || [];
   }, [searchParams]);
 
-  const updateQuery = (value) => {
+  const updateQuery = ( value ) => {
+    // change 
     const newParams = new URLSearchParams(searchParams);
     if (value) newParams.set('query', value);
     else newParams.delete('query');
     setSearchParams(newParams);
   };
-
+// change
   const updateType = (checkboxValue, checked) => {
     const current = new Set(type);
 

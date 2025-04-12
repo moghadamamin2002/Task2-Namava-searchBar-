@@ -1,13 +1,13 @@
 import React from 'react';
 import useStyles from './styles';
 
-const Card = ({ NAME, IMAGE }) => {
+const Card = ({ name, image }) => {
   const classStyle = useStyles();
   return (
     <>
       <div className={classStyle.card}>
-        <img className={classStyle.poster} src={IMAGE} alt={NAME || 'فیلم'} />
-        <p className={classStyle.titleMovie}>{NAME}</p>
+        <img className={classStyle.poster} src={image} alt={name || 'فیلم'} />
+        <p className={classStyle.titleMovie}>{name}</p>
       </div>
     </>
   );

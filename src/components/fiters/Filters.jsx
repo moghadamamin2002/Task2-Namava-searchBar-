@@ -19,6 +19,7 @@ const Filters = () => {
         </div>
         <div className={classStyles.filterDown}>
           <div className={classStyles.film}>
+            {/* //change */}
             <input
               id="check-film"
               className={classStyles.checkBox}

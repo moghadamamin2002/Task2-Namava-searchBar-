@@ -3,7 +3,7 @@ import Loading from '../loading/Loading';
 const GridStyle = {
   grid: {
     display: 'flex',
-    justifyContent: 'start',
+    justifyContent: 'center',
     alignItems: 'start',
     flexDirection: 'row',
     gap: '16px',

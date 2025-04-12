@@ -5,6 +5,8 @@ import CANCELICON from './../../assets/img/cancel.png';
 import Grid from '../grid/Grid';
 import useClearableInput from '../../hooks/useClearableInput.';
 import useQueryParams from '../../hooks/useQueryParams';
+import SearchIcons from '../icons/SearchIcons';
+import Cancel from '../icons/CancelIcon';
 
 const SearchBar = () => {
   const classStyles = useStyles();
@@ -24,26 +26,22 @@ const SearchBar = () => {
     <div className={classStyles.searchBody}>
       <div className={classStyles.searchBarHeightContainer}>
         <div className={classStyles.searchBarContainer}>
-          <img
+          <Cancel
             className={classStyles.cancelIcon}
-            src={CANCELICON}
-            alt="لغو"
+            ref={ref}
             onClick={clearInput}
           />
           <input
             type="text"
             id="searchBarID"
             className={classStyles.searchBar}
-            placeholder="فیلم،سریال،بازیگر و ژانر"
+            placeholder="فیلم ، سریال ، بازیگر و ژانر"
             ref={ref}
             value={query}
             onChange={handleInputChange}
           />
-          <img className={classStyles.searchIMG} src={SEARCH} alt="جستجو" />
-        </div>
 
-        <div className={classStyles.grid}>
-          <Grid />
+          <SearchIcons className={classStyles.searchIMG} />
         </div>
       </div>
     </div>
