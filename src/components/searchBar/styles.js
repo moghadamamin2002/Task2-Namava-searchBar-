@@ -2,8 +2,8 @@ import { createUseStyles } from 'react-jss';
 const styleSearchBar = {
   searchBody: {
     display: 'flex',
-    justifyContent: 'start',
-    alignItems: 'center',
+    justifyContent: 'center',
+    alignItems: 'start',
     flexDirection: 'column',
     width: '100%',
     backgroundColor: 'black',
@@ -16,13 +16,12 @@ const styleSearchBar = {
     width: '90%',
     flexDirection: 'column',
     justifyContent: 'start',
-    alignItems: 'center',
+    alignItems: 'start',
     overflowY: 'auto',
     minWidth: '436px',
 
-    
     '&::-webkit-scrollbar': {
-      display: 'none', 
+      display: 'none',
     },
   },
 

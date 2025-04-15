@@ -1,5 +1,5 @@
 import React from 'react';
-import useStyles from './LoadingStyle';
+import useStyles from './styles';
 import LoadingIMG from "../../assets/img/Joker.png"
 
 const Loading = () => {

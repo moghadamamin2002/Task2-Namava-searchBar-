@@ -1,6 +1,7 @@
 import React from 'react';
-import useStyles from './FiltersStyle';
+import useStyles from './styles';
 import useQueryParams from '../../hooks/useQueryParams';
+import CheckBox from '../CheckBox';
 
 const Filters = () => {
   const classStyles = useStyles();
@@ -19,7 +20,7 @@ const Filters = () => {
         </div>
         <div className={classStyles.filterDown}>
           <div className={classStyles.film}>
-            <input
+            <CheckBox
               id="check-film"
               className={classStyles.checkBox}
               type="checkbox"
@@ -30,7 +31,7 @@ const Filters = () => {
             <label htmlFor="check-film">فیلم</label>
           </div>
           <div className={classStyles.series}>
-            <input
+            <CheckBox
               id="check-series"
               className={classStyles.checkBox}
               type="checkbox"

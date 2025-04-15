@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import useStyles from './GridStyle';
-import Card from '../card/Card';
+import useStyles from './styles';
+import Card from '../Card/index';
 import useMovies from '../../hooks/useMovie';
 import useQueryParams from '../../hooks/useQueryParams';
 import Loading from '../loading/Loading';
-import EmptySearchPrompt from './../emptySearchPrompt/EmptySearchPrompt';
+import EmptySearchPrompt from '../EmptySearchPrompt';
 import NoResultsFound from './../noResultsFound/NoResultsFound';
 
 const Grid = () => {
@@ -38,7 +38,7 @@ const Grid = () => {
             setPage((page) => page + 1);
           }
         },
-        { threshold: 0.5 }
+        { threshold: 0.1 }
       );
 
       if (node) observerRef.current.observe(node);
@@ -57,7 +57,7 @@ const Grid = () => {
   return (
     <div className={classStyle.grid}>
       {movies.map((movie) => (
-        <Card key={movie.id} NAME={movie.name} IMAGE={movie.image_url} />
+        <Card key={movie.id} name={movie.name} image={movie.image_url} />
       ))}
 
       <div className="loading" ref={lastItemRef}>

@@ -29,10 +29,6 @@ const useMovies = (query, type, page) => {
             setMovies((prev) => (page === 1 ? results : [...prev, ...results]));
             setTotal(totalItems);
             setHasMore((page - 1) * 20 + results.length < totalItems);
-          } else if (page === 1) {
-            setMovies([]);
-            setTotal(0);
-            setHasMore(false);
           }
         })
         .catch((err) => {
@@ -43,11 +39,6 @@ const useMovies = (query, type, page) => {
         .finally(() => {
           setLoading(false);
         });
-    } else if (page === 1) {
-      setMovies([]);
-      setTotal(0);
-      setHasMore(false);
-      setLoading(false);
     }
 
     return () => controller.abort();

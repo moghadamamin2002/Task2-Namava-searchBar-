@@ -13,29 +13,39 @@ const useQueryParams = () => {
   }, [searchParams]);
 
   const updateQuery = (value) => {
-    const newParams = new URLSearchParams(searchParams);
-    if (value) newParams.set('query', value);
-    else newParams.delete('query');
-    setSearchParams(newParams);
+    const params = Object.fromEntries([...searchParams.entries()]);
+    if (value) {
+      params.query = value;
+    } else {
+      delete params.query;
+    }
+    setSearchParams(params);
   };
 
   const updateType = (checkboxValue, checked) => {
-    const current = new Set(type);
+    let current = [...type];
+    console.log('current 1:', current);
 
-    if (checked) current.add(checkboxValue);
-    else current.delete(checkboxValue);
-
-    const newParams = new URLSearchParams(searchParams);
-
-    if (current.has('movie') && current.has('series')) {
-      newParams.set('type', 'all');
-    } else if (current.size > 0) {
-      newParams.set('type', [...current].join(','));
-    } else {
-      newParams.delete('type');
+    if (checked && !current.includes(checkboxValue)) {
+      current.push(checkboxValue);
     }
 
-    setSearchParams(newParams);
+    if (!checked) {
+      current = current.filter((item) => item !== checkboxValue);
+    }
+
+    const params = Object.fromEntries([...searchParams.entries()]);
+
+    if (current.includes('movie') && current.includes('series')) {
+      params.type = 'all';
+    } else if (current.length > 0) {
+      params.type = current.join(',');
+    } else {
+      delete params.type;
+    }
+    console.log('current 2:', current);
+
+    setSearchParams(params);
   };
 
   return { query, type, updateQuery, updateType };

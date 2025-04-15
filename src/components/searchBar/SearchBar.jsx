@@ -42,9 +42,7 @@ const SearchBar = () => {
           <img className={classStyles.searchIMG} src={SEARCH} alt="جستجو" />
         </div>
 
-        <div className={classStyles.grid}>
-          <Grid />
-        </div>
+        
       </div>
     </div>
   );
