@@ -3,9 +3,9 @@ import useStyles from './styles';
 import Card from '../Card/index';
 import useMovies from '../../hooks/useMovie';
 import useQueryParams from '../../hooks/useQueryParams';
-import Loading from '../loading/Loading';
+import Loading from '../Loading';
 import EmptySearchPrompt from '../EmptySearchPrompt';
-import NoResultsFound from './../noResultsFound/NoResultsFound';
+import NoResultsFound from '../NoResultsFound';
 
 const Grid = () => {
   const classStyle = useStyles();

@@ -1,7 +1,7 @@
-import useStyles from './NavbarStyle';
-import SearchIcon from './../icons/SearchIcons';
-import MailIcon from './../icons/MailIcon';
-import LogoNamava from './../icons/NamavaIcon';
+import useStyles from './styles';
+import SearchIcon from '../icons/SearchIcons';
+import MailIcon from '../icons/MailIcon';
+import LogoNamava from '../icons/NamavaIcon';
 import PROFILE from './../../assets/img/namava-profile.png';
 
 const Navbar = () => {
